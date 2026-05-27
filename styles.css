@@ -1,29 +1,29 @@
 /* ============ Design tokens ============ */
 :root {
-  --bg: #0f1020;
-  --bg-2: #15172b;
-  --bg-soft: #1c1f3d;
-  --bg-card: #21254a;
-  --fg: #f0f3ff;
-  --fg-soft: #a9b1d6;
-  --fg-muted: #6b7394;
-  --border: #2e3358;
+  --bg: #122c6e;
+  --bg-2: #1a3a8e;
+  --bg-soft: #2350b3;
+  --bg-card: #2b5fcc;
+  --fg: #ffffff;
+  --fg-soft: #d6e4ff;
+  --fg-muted: #93afe0;
+  --border: #4a7cdf;
 
-  --blue: #7aa2f7;
-  --purple: #bb9af7;
-  --pink: #f7768e;
-  --orange: #ff9e64;
-  --yellow: #e0af68;
-  --green: #9ece6a;
-  --cyan: #7dcfff;
-  --red: #f7768e;
-  --code-bg: #0a0b1a;
+  --blue: #8ebbff;
+  --purple: #cfa6ff;
+  --pink: #ff8aab;
+  --orange: #ffb778;
+  --yellow: #ffd97a;
+  --green: #a3f0ae;
+  --cyan: #7eecff;
+  --red: #ff8aab;
+  --code-bg: #0a1f52;
 
-  --grad-1: linear-gradient(135deg, #7aa2f7 0%, #bb9af7 50%, #f7768e 100%);
-  --grad-2: linear-gradient(135deg, #ff9e64 0%, #f7768e 100%);
-  --grad-3: linear-gradient(135deg, #7dcfff 0%, #7aa2f7 100%);
-  --grad-4: linear-gradient(135deg, #9ece6a 0%, #7dcfff 100%);
-  --grad-5: linear-gradient(135deg, #bb9af7 0%, #f7768e 100%);
+  --grad-1: linear-gradient(135deg, #8ebbff 0%, #cfa6ff 50%, #ff8aab 100%);
+  --grad-2: linear-gradient(135deg, #ffb778 0%, #ff8aab 100%);
+  --grad-3: linear-gradient(135deg, #7eecff 0%, #8ebbff 100%);
+  --grad-4: linear-gradient(135deg, #a3f0ae 0%, #7eecff 100%);
+  --grad-5: linear-gradient(135deg, #cfa6ff 0%, #ff8aab 100%);
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
