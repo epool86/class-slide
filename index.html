@@ -7,21 +7,110 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+
+  <!-- ============ Icon sprite (hidden) ============ -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="i-sparkle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1"/>
+        <circle cx="12" cy="12" r="3"/>
+      </symbol>
+      <symbol id="i-rocket" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/>
+        <path d="M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/>
+        <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/>
+      </symbol>
+      <symbol id="i-code" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="16 18 22 12 16 6"/>
+        <polyline points="8 6 2 12 8 18"/>
+      </symbol>
+      <symbol id="i-database" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <ellipse cx="12" cy="5" rx="9" ry="3"/>
+        <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/>
+        <path d="M3 12c0 1.66 4 3 9 3s9-1.34 9-3"/>
+      </symbol>
+      <symbol id="i-cloud" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M17.5 19a4.5 4.5 0 1 0 0-9h-1.8A7 7 0 1 0 4 16"/>
+      </symbol>
+      <symbol id="i-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"/>
+        <path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/>
+      </symbol>
+      <symbol id="i-github" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.56v-2c-3.2.7-3.87-1.36-3.87-1.36-.52-1.33-1.27-1.68-1.27-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.03 1.76 2.7 1.25 3.36.95.1-.74.4-1.25.73-1.54-2.56-.29-5.25-1.28-5.25-5.7 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.47.11-3.06 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.78 0c2.2-1.49 3.17-1.18 3.17-1.18.62 1.59.23 2.77.11 3.06.73.81 1.18 1.84 1.18 3.1 0 4.43-2.7 5.4-5.27 5.69.41.36.78 1.06.78 2.13v3.16c0 .31.21.67.8.56C20.21 21.38 23.5 17.08 23.5 12 23.5 5.65 18.35.5 12 .5z"/>
+      </symbol>
+      <symbol id="i-zap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+      </symbol>
+      <symbol id="i-sheet" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="3" y="3" width="18" height="18" rx="2"/>
+        <path d="M3 9h18M3 15h18M9 3v18M15 3v18"/>
+      </symbol>
+      <symbol id="i-link" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
+        <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
+      </symbol>
+      <symbol id="i-brain" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M9.5 2A2.5 2.5 0 0 0 7 4.5v15A2.5 2.5 0 0 0 9.5 22h.5V2h-.5zM14 2h.5A2.5 2.5 0 0 1 17 4.5v15a2.5 2.5 0 0 1-2.5 2.5H14V2z"/>
+        <path d="M7 8h-.5A2.5 2.5 0 0 0 4 10.5v0A2.5 2.5 0 0 0 6.5 13H7"/>
+        <path d="M17 8h.5A2.5 2.5 0 0 1 20 10.5v0a2.5 2.5 0 0 1-2.5 2.5H17"/>
+      </symbol>
+      <symbol id="i-target" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"/>
+        <circle cx="12" cy="12" r="6"/>
+        <circle cx="12" cy="12" r="2"/>
+      </symbol>
+      <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="20 6 9 17 4 12"/>
+      </symbol>
+      <symbol id="i-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="18" y1="6" x2="6" y2="18"/>
+        <line x1="6" y1="6" x2="18" y2="18"/>
+      </symbol>
+      <symbol id="i-question" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"/>
+        <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3M12 17h.01"/>
+      </symbol>
+      <symbol id="i-layers" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polygon points="12 2 2 7 12 12 22 7 12 2"/>
+        <polyline points="2 17 12 22 22 17"/>
+        <polyline points="2 12 12 17 22 12"/>
+      </symbol>
+      <symbol id="i-terminal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="4 17 10 11 4 5"/>
+        <line x1="12" y1="19" x2="20" y2="19"/>
+      </symbol>
+      <symbol id="i-arrow-flow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M5 12h14M13 6l6 6-6 6"/>
+      </symbol>
+    </defs>
+  </svg>
+
+  <div id="progress"></div>
+
   <main id="deck">
 
     <!-- ============ SECTION 1: INTRO ============ -->
 
     <section class="slide" data-section="Intro">
       <div class="slide-inner center">
-        <h1 class="title-xl">Build Your First App<br/><span class="accent">with AI</span></h1>
+        <div class="hero-emoji">
+          <svg class="icon icon-xl" style="width:80px;height:80px;color:var(--orange)"><use href="#i-rocket"/></svg>
+        </div>
+        <h1 class="title-xl">Build Your First App<br/>with AI</h1>
         <p class="lede">No coding background needed. Free tools only.</p>
-        <p class="meta">A 3-hour hands-on session for vibe coders</p>
+        <div class="tag-row">
+          <span class="pill pill-free">100% Free</span>
+          <span class="pill pill-fast">3 Hours</span>
+          <span class="pill pill-new">For Vibe Coders</span>
+        </div>
+        <p class="meta">A hands-on session — build · connect · ship</p>
       </div>
     </section>
 
     <section class="slide" data-section="Intro">
       <div class="slide-inner">
-        <h2>What you'll walk away with today</h2>
+        <h2><svg class="icon icon-lg" style="color:var(--green)"><use href="#i-target"/></svg> What you'll walk away with today</h2>
         <p class="desc">By the end of this session, you'll have a working web app — built, connected to a database, and live on the internet.</p>
         <ul class="checklist">
           <li>A real static web app (HTML page)</li>
@@ -35,32 +124,38 @@
 
     <section class="slide" data-section="Intro">
       <div class="slide-inner">
-        <h2>The stack we'll use today</h2>
+        <h2><svg class="icon icon-lg" style="color:var(--cyan)"><use href="#i-layers"/></svg> The stack we'll use today</h2>
         <p class="desc">Everything here is free. No credit card, no subscription.</p>
         <div class="stack-grid">
           <div class="stack-card">
+            <div class="icon-chip chip-pink"><svg class="icon"><use href="#i-brain"/></svg></div>
             <div class="stack-label">AI helpers</div>
             <div class="stack-tool">Gemini · AI Studio · Antigravity</div>
           </div>
           <div class="stack-card">
+            <div class="icon-chip chip-blue"><svg class="icon"><use href="#i-code"/></svg></div>
             <div class="stack-label">Frontend</div>
             <div class="stack-tool">Plain HTML / CSS / JS</div>
           </div>
           <div class="stack-card">
+            <div class="icon-chip chip-green"><svg class="icon"><use href="#i-sheet"/></svg></div>
             <div class="stack-label">Database</div>
             <div class="stack-tool">Google Sheets</div>
           </div>
           <div class="stack-card">
+            <div class="icon-chip chip-purple"><svg class="icon"><use href="#i-zap"/></svg></div>
             <div class="stack-label">API / Backend</div>
             <div class="stack-tool">Google Apps Script</div>
           </div>
           <div class="stack-card">
+            <div class="icon-chip chip-cyan"><svg class="icon"><use href="#i-github"/></svg></div>
             <div class="stack-label">Code hosting</div>
             <div class="stack-tool">GitHub</div>
           </div>
           <div class="stack-card">
+            <div class="icon-chip chip-orange"><svg class="icon"><use href="#i-globe"/></svg></div>
             <div class="stack-label">Web hosting</div>
-            <div class="stack-tool">Cloudflare Pages / GitHub Pages</div>
+            <div class="stack-tool">Cloudflare Pages · GitHub Pages</div>
           </div>
         </div>
       </div>
@@ -70,11 +165,12 @@
 
     <section class="slide" data-section="Foundations">
       <div class="slide-inner">
-        <h2>What is a "static" web app?</h2>
+        <h2><svg class="icon icon-lg" style="color:var(--cyan)"><use href="#i-question"/></svg> What is a "static" web app?</h2>
         <p class="desc">A static app is just files (HTML, CSS, JS) served to the browser. No server running your code. The browser does all the work.</p>
         <div class="two-col">
           <div class="col">
-            <h3>Static</h3>
+            <div class="icon-chip chip-green"><svg class="icon"><use href="#i-check"/></svg></div>
+            <h3 style="color:var(--green)">Static</h3>
             <ul>
               <li>Just files</li>
               <li>Free to host</li>
@@ -83,7 +179,8 @@
             </ul>
           </div>
           <div class="col">
-            <h3>Dynamic</h3>
+            <div class="icon-chip chip-orange"><svg class="icon"><use href="#i-zap"/></svg></div>
+            <h3 style="color:var(--orange)">Dynamic</h3>
             <ul>
               <li>Needs a server running 24/7</li>
               <li>Usually costs money</li>
@@ -98,25 +195,28 @@
 
     <section class="slide" data-section="Foundations">
       <div class="slide-inner">
-        <h2>HTML, CSS, JS in 60 seconds</h2>
+        <h2><svg class="icon icon-lg" style="color:var(--blue)"><use href="#i-code"/></svg> HTML, CSS, JS in 60 seconds</h2>
         <div class="three-col">
           <div class="col">
-            <h3>HTML</h3>
+            <div class="icon-chip chip-orange"><svg class="icon"><use href="#i-layers"/></svg></div>
+            <h3 style="color:var(--orange)">HTML</h3>
             <p>The structure. Boxes and text.</p>
-            <pre class="code" contenteditable="true">&lt;h1&gt;Hello&lt;/h1&gt;
-&lt;p&gt;World&lt;/p&gt;</pre>
+            <div class="code"><pre class="code-content" contenteditable="true">&lt;h1&gt;Hello&lt;/h1&gt;
+&lt;p&gt;World&lt;/p&gt;</pre></div>
           </div>
           <div class="col">
-            <h3>CSS</h3>
+            <div class="icon-chip chip-pink"><svg class="icon"><use href="#i-sparkle"/></svg></div>
+            <h3 style="color:var(--pink)">CSS</h3>
             <p>The look. Colors, spacing.</p>
-            <pre class="code" contenteditable="true">h1 {
+            <div class="code"><pre class="code-content" contenteditable="true">h1 {
   color: orange;
-}</pre>
+}</pre></div>
           </div>
           <div class="col">
-            <h3>JS</h3>
+            <div class="icon-chip chip-yellow"><svg class="icon"><use href="#i-zap"/></svg></div>
+            <h3 style="color:var(--yellow)">JS</h3>
             <p>The behavior. Clicks, data.</p>
-            <pre class="code" contenteditable="true">alert("Hi!");</pre>
+            <div class="code"><pre class="code-content" contenteditable="true">alert("Hi!");</pre></div>
           </div>
         </div>
         <p class="note">You don't need to memorize these — the AI writes them for you.</p>
@@ -127,16 +227,16 @@
 
     <section class="slide" data-section="AI Tools">
       <div class="slide-inner">
-        <h2>Your coding partner: AI</h2>
+        <h2><svg class="icon icon-lg" style="color:var(--pink)"><use href="#i-brain"/></svg> Your coding partner: AI</h2>
         <p class="desc">You describe what you want. The AI writes the code. You read, run, and refine.</p>
         <div class="flow-row">
           <div class="flow-step">You describe</div>
           <div class="arrow">→</div>
-          <div class="flow-step">AI writes code</div>
+          <div class="flow-step alt-1">AI writes code</div>
           <div class="arrow">→</div>
-          <div class="flow-step">You run it</div>
+          <div class="flow-step alt-3">You run it</div>
           <div class="arrow">→</div>
-          <div class="flow-step">You refine</div>
+          <div class="flow-step alt-4">You refine</div>
         </div>
         <p class="note">The skill you're learning today is <em>describing clearly</em>, not memorizing syntax.</p>
       </div>
@@ -144,10 +244,10 @@
 
     <section class="slide" data-section="AI Tools">
       <div class="slide-inner">
-        <h2>Google AI Studio</h2>
+        <h2><svg class="icon icon-lg" style="color:var(--blue)"><use href="#i-sparkle"/></svg> Google AI Studio</h2>
         <p class="desc">A free playground for Gemini. Great for trying ideas, generating code snippets, and chatting through a problem.</p>
-        <ul>
-          <li>aistudio.google.com</li>
+        <ul class="checklist">
+          <li><code>aistudio.google.com</code></li>
           <li>Sign in with Google — done</li>
           <li>Pick a model (e.g. Gemini 2.5 Pro)</li>
           <li>Start prompting</li>
@@ -158,10 +258,10 @@
 
     <section class="slide" data-section="AI Tools">
       <div class="slide-inner">
-        <h2>Gemini (the chat app)</h2>
+        <h2><svg class="icon icon-lg" style="color:var(--purple)"><use href="#i-brain"/></svg> Gemini (the chat app)</h2>
         <p class="desc">The consumer-facing chat. Same family of models. Useful when you want a clean conversation about your project.</p>
-        <ul>
-          <li>gemini.google.com</li>
+        <ul class="checklist">
+          <li><code>gemini.google.com</code></li>
           <li>Free tier is enough for class today</li>
           <li>Can read images — paste screenshots of errors</li>
         </ul>
@@ -170,9 +270,9 @@
 
     <section class="slide" data-section="AI Tools">
       <div class="slide-inner">
-        <h2>Antigravity (CLI / IDE / Agent)</h2>
+        <h2><svg class="icon icon-lg" style="color:var(--orange)"><use href="#i-terminal"/></svg> Antigravity (CLI / IDE / Agent)</h2>
         <p class="desc">An AI coding agent that lives in your editor or terminal. It can read your files, edit them, run commands — like a junior developer pair-programming with you.</p>
-        <ul>
+        <ul class="checklist">
           <li>Great for multi-file projects</li>
           <li>Can run your code and fix errors itself</li>
           <li>You stay in control — review every change</li>
@@ -183,16 +283,16 @@
 
     <section class="slide" data-section="AI Tools">
       <div class="slide-inner">
-        <h2>How to prompt for code</h2>
+        <h2><svg class="icon icon-lg" style="color:var(--green)"><use href="#i-target"/></svg> How to prompt for code</h2>
         <p class="desc">A good prompt has three parts: <strong>what</strong> you want, <strong>context</strong>, and <strong>constraints</strong>.</p>
-        <pre class="code" contenteditable="true">Build me a simple HTML page with a form
+        <div class="code"><pre class="code-content" contenteditable="true">Build me a simple HTML page with a form
 that has a name field and a submit button.
 
 When submitted, show the name in a greeting
 below the form.
 
 Use plain JavaScript, no frameworks.
-Keep it under 50 lines.</pre>
+Keep it under 50 lines.</pre></div>
         <p class="note">Bad: "make a website". Good: specific, contextual, constrained.</p>
       </div>
     </section>
@@ -201,20 +301,34 @@ Keep it under 50 lines.</pre>
 
     <section class="slide" data-section="Database">
       <div class="slide-inner">
-        <h2>Google Sheets as your database</h2>
+        <h2><svg class="icon icon-lg" style="color:var(--green)"><use href="#i-sheet"/></svg> Google Sheets as your database</h2>
         <p class="desc">For most small apps, a spreadsheet is more than enough. You already know how to use it. It's free. It's shareable.</p>
-        <ul>
-          <li>Rows = records</li>
-          <li>Columns = fields</li>
-          <li>First row = column names</li>
-          <li>Visible — you can edit/inspect data anytime</li>
-        </ul>
+        <div class="two-col">
+          <div class="col">
+            <h3 style="color:var(--green)">How it maps</h3>
+            <ul>
+              <li><strong>Rows</strong> = records</li>
+              <li><strong>Columns</strong> = fields</li>
+              <li><strong>First row</strong> = column names</li>
+              <li><strong>Tab name</strong> = table name</li>
+            </ul>
+          </div>
+          <div class="col">
+            <h3 style="color:var(--cyan)">Why it's great for class</h3>
+            <ul>
+              <li>You already know spreadsheets</li>
+              <li>Visible — inspect/edit anytime</li>
+              <li>Shareable with one click</li>
+              <li>Zero setup</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </section>
 
     <section class="slide" data-section="Database">
       <div class="slide-inner">
-        <h2>Designing your sheet</h2>
+        <h2><svg class="icon icon-lg" style="color:var(--cyan)"><use href="#i-sheet"/></svg> Designing your sheet</h2>
         <p class="desc">Example: a "users" sheet for a sign-up form.</p>
         <table class="data-table">
           <thead>
@@ -231,14 +345,28 @@ Keep it under 50 lines.</pre>
 
     <section class="slide" data-section="Database">
       <div class="slide-inner">
-        <h2>When Sheets is NOT enough</h2>
+        <h2><svg class="icon icon-lg" style="color:var(--red)"><use href="#i-x"/></svg> When Sheets is NOT enough</h2>
         <p class="desc">It's a great start, but know the limits.</p>
-        <ul>
-          <li>Hundreds of writes per second? No.</li>
-          <li>Millions of rows? No.</li>
-          <li>Sensitive personal data? Be careful.</li>
-          <li>Complex relations? Possible but messy.</li>
-        </ul>
+        <div class="two-col">
+          <div class="col">
+            <h3 style="color:var(--red)">Not great when…</h3>
+            <ul>
+              <li>Hundreds of writes per second</li>
+              <li>Millions of rows</li>
+              <li>Sensitive personal data</li>
+              <li>Complex relations across tables</li>
+            </ul>
+          </div>
+          <div class="col">
+            <h3 style="color:var(--green)">Perfect when…</h3>
+            <ul>
+              <li>Side projects & MVPs</li>
+              <li>Class projects</li>
+              <li>Small business forms</li>
+              <li>Internal tools (&lt;100 users)</li>
+            </ul>
+          </div>
+        </div>
         <p class="note">For 99% of side projects and class projects, Sheets is perfect.</p>
       </div>
     </section>
@@ -247,36 +375,44 @@ Keep it under 50 lines.</pre>
 
     <section class="slide" data-section="Apps Script">
       <div class="slide-inner">
-        <h2>Google Apps Script as your API</h2>
+        <h2><svg class="icon icon-lg" style="color:var(--purple)"><use href="#i-zap"/></svg> Google Apps Script as your API</h2>
         <p class="desc">Apps Script is free JavaScript that runs on Google's servers, with built-in access to your Sheets, Docs, Gmail, and more.</p>
-        <p>It's the bridge between your static app (in the browser) and your data (in the Sheet).</p>
+        <p style="color:var(--fg-soft);margin-bottom:8px">It's the bridge between your static app (in the browser) and your data (in the Sheet).</p>
         <div class="flow-row">
           <div class="flow-step">Your app</div>
           <div class="arrow">→</div>
-          <div class="flow-step">Apps Script (API)</div>
+          <div class="flow-step alt-1">Apps Script (API)</div>
           <div class="arrow">→</div>
-          <div class="flow-step">Google Sheet</div>
+          <div class="flow-step alt-3">Google Sheet</div>
         </div>
       </div>
     </section>
 
     <section class="slide" data-section="Apps Script">
       <div class="slide-inner">
-        <h2>The two functions you need</h2>
+        <h2><svg class="icon icon-lg" style="color:var(--blue)"><use href="#i-code"/></svg> The two functions you need</h2>
         <p class="desc">Apps Script Web Apps run two special functions when a URL is called:</p>
-        <ul>
-          <li><code>doGet(e)</code> — runs when someone <em>reads</em> data (GET request)</li>
-          <li><code>doPost(e)</code> — runs when someone <em>writes</em> data (POST request)</li>
-        </ul>
-        <p>Each receives an <code>e</code> (event) object with parameters and body.</p>
+        <div class="two-col">
+          <div class="col">
+            <div class="icon-chip chip-cyan"><svg class="icon"><use href="#i-arrow-flow"/></svg></div>
+            <h3 style="color:var(--cyan)">doGet(e)</h3>
+            <p>Runs when someone <em>reads</em> data (GET request).</p>
+          </div>
+          <div class="col">
+            <div class="icon-chip chip-pink"><svg class="icon"><use href="#i-arrow-flow"/></svg></div>
+            <h3 style="color:var(--pink)">doPost(e)</h3>
+            <p>Runs when someone <em>writes</em> data (POST request).</p>
+          </div>
+        </div>
+        <p class="note">Each receives an <code>e</code> (event) object with parameters and body.</p>
       </div>
     </section>
 
     <section class="slide" data-section="Apps Script">
       <div class="slide-inner">
-        <h2>Reading from the sheet</h2>
+        <h2><svg class="icon icon-lg" style="color:var(--cyan)"><use href="#i-arrow-flow"/></svg> Reading from the sheet</h2>
         <p class="desc">A minimal <code>doGet</code> that returns all rows as JSON.</p>
-        <pre class="code" contenteditable="true">function doGet(e) {
+        <div class="code"><pre class="code-content" contenteditable="true">function doGet(e) {
   const sheet = SpreadsheetApp
     .getActiveSpreadsheet()
     .getSheetByName("users");
@@ -293,15 +429,15 @@ Keep it under 50 lines.</pre>
   return ContentService
     .createTextOutput(JSON.stringify(rows))
     .setMimeType(ContentService.MimeType.JSON);
-}</pre>
+}</pre></div>
       </div>
     </section>
 
     <section class="slide" data-section="Apps Script">
       <div class="slide-inner">
-        <h2>Writing to the sheet</h2>
+        <h2><svg class="icon icon-lg" style="color:var(--pink)"><use href="#i-arrow-flow"/></svg> Writing to the sheet</h2>
         <p class="desc">A minimal <code>doPost</code> that appends a new row.</p>
-        <pre class="code" contenteditable="true">function doPost(e) {
+        <div class="code"><pre class="code-content" contenteditable="true">function doPost(e) {
   const body = JSON.parse(e.postData.contents);
 
   const sheet = SpreadsheetApp
@@ -318,14 +454,14 @@ Keep it under 50 lines.</pre>
   return ContentService
     .createTextOutput(JSON.stringify({ ok: true }))
     .setMimeType(ContentService.MimeType.JSON);
-}</pre>
+}</pre></div>
       </div>
     </section>
 
     <section class="slide" data-section="Apps Script">
       <div class="slide-inner">
-        <h2>Deploy as a Web App</h2>
-        <p class="desc">In Apps Script editor:</p>
+        <h2><svg class="icon icon-lg" style="color:var(--orange)"><use href="#i-rocket"/></svg> Deploy as a Web App</h2>
+        <p class="desc">In the Apps Script editor:</p>
         <ol class="steps">
           <li>Click <strong>Deploy → New deployment</strong></li>
           <li>Type: <strong>Web app</strong></li>
@@ -339,7 +475,7 @@ Keep it under 50 lines.</pre>
 
     <section class="slide diagram-slide" data-section="Apps Script">
       <div class="slide-inner">
-        <h2>The full data flow</h2>
+        <h2><svg class="icon icon-lg" style="color:var(--purple)"><use href="#i-layers"/></svg> The full data flow</h2>
         <p class="desc">Drag to pan · scroll to zoom · double-click to reset</p>
         <div class="diagram-wrap" id="diagramWrap">
           <svg id="flowDiagram" viewBox="0 0 1200 500" xmlns="http://www.w3.org/2000/svg">
@@ -349,77 +485,73 @@ Keep it under 50 lines.</pre>
               </marker>
             </defs>
 
-            <!-- Browser / User -->
+            <!-- Browser -->
             <g>
-              <rect x="40" y="180" width="200" height="140" rx="12" fill="#1f2335" stroke="#7aa2f7" stroke-width="2"/>
-              <text x="140" y="220" text-anchor="middle" fill="#c0caf5" font-size="20" font-weight="600">Browser</text>
-              <text x="140" y="250" text-anchor="middle" fill="#9aa5ce" font-size="14">Your static</text>
-              <text x="140" y="270" text-anchor="middle" fill="#9aa5ce" font-size="14">HTML page</text>
+              <rect x="40" y="180" width="200" height="140" rx="14" fill="#21254a" stroke="#7aa2f7" stroke-width="2"/>
+              <text x="140" y="220" text-anchor="middle" fill="#f0f3ff" font-size="20" font-weight="700">Browser</text>
+              <text x="140" y="250" text-anchor="middle" fill="#a9b1d6" font-size="14">Your static</text>
+              <text x="140" y="270" text-anchor="middle" fill="#a9b1d6" font-size="14">HTML page</text>
               <text x="140" y="300" text-anchor="middle" fill="#7aa2f7" font-size="12">fetch(url)</text>
             </g>
 
-            <!-- Arrow 1 -->
             <line x1="245" y1="230" x2="395" y2="230" stroke="#7aa2f7" stroke-width="2" marker-end="url(#arrowhead)"/>
-            <text x="320" y="220" text-anchor="middle" fill="#c0caf5" font-size="13">HTTPS request</text>
-            <text x="320" y="248" text-anchor="middle" fill="#9aa5ce" font-size="11">GET or POST</text>
+            <text x="320" y="220" text-anchor="middle" fill="#f0f3ff" font-size="13">HTTPS request</text>
+            <text x="320" y="248" text-anchor="middle" fill="#a9b1d6" font-size="11">GET or POST</text>
 
-            <!-- Arrow back -->
             <line x1="395" y1="270" x2="245" y2="270" stroke="#9ece6a" stroke-width="2" marker-end="url(#arrowhead)"/>
             <text x="320" y="290" text-anchor="middle" fill="#9ece6a" font-size="13">JSON response</text>
 
             <!-- Apps Script -->
             <g>
-              <rect x="400" y="180" width="220" height="140" rx="12" fill="#1f2335" stroke="#bb9af7" stroke-width="2"/>
-              <text x="510" y="215" text-anchor="middle" fill="#c0caf5" font-size="20" font-weight="600">Apps Script</text>
-              <text x="510" y="245" text-anchor="middle" fill="#9aa5ce" font-size="14">doGet(e)</text>
-              <text x="510" y="265" text-anchor="middle" fill="#9aa5ce" font-size="14">doPost(e)</text>
+              <rect x="400" y="180" width="220" height="140" rx="14" fill="#21254a" stroke="#bb9af7" stroke-width="2"/>
+              <text x="510" y="215" text-anchor="middle" fill="#f0f3ff" font-size="20" font-weight="700">Apps Script</text>
+              <text x="510" y="245" text-anchor="middle" fill="#a9b1d6" font-size="14">doGet(e)</text>
+              <text x="510" y="265" text-anchor="middle" fill="#a9b1d6" font-size="14">doPost(e)</text>
               <text x="510" y="295" text-anchor="middle" fill="#bb9af7" font-size="12">runs on Google servers</text>
             </g>
 
-            <!-- Arrow 2 -->
             <line x1="625" y1="230" x2="775" y2="230" stroke="#bb9af7" stroke-width="2" marker-end="url(#arrowhead)"/>
-            <text x="700" y="220" text-anchor="middle" fill="#c0caf5" font-size="13">read / write</text>
-            <text x="700" y="248" text-anchor="middle" fill="#9aa5ce" font-size="11">SpreadsheetApp</text>
+            <text x="700" y="220" text-anchor="middle" fill="#f0f3ff" font-size="13">read / write</text>
+            <text x="700" y="248" text-anchor="middle" fill="#a9b1d6" font-size="11">SpreadsheetApp</text>
 
             <line x1="775" y1="270" x2="625" y2="270" stroke="#9ece6a" stroke-width="2" marker-end="url(#arrowhead)"/>
             <text x="700" y="290" text-anchor="middle" fill="#9ece6a" font-size="13">row data</text>
 
             <!-- Google Sheet -->
             <g>
-              <rect x="780" y="180" width="200" height="140" rx="12" fill="#1f2335" stroke="#9ece6a" stroke-width="2"/>
-              <text x="880" y="220" text-anchor="middle" fill="#c0caf5" font-size="20" font-weight="600">Google Sheet</text>
-              <text x="880" y="250" text-anchor="middle" fill="#9aa5ce" font-size="14">"users" tab</text>
-              <text x="880" y="270" text-anchor="middle" fill="#9aa5ce" font-size="14">rows of data</text>
+              <rect x="780" y="180" width="200" height="140" rx="14" fill="#21254a" stroke="#9ece6a" stroke-width="2"/>
+              <text x="880" y="220" text-anchor="middle" fill="#f0f3ff" font-size="20" font-weight="700">Google Sheet</text>
+              <text x="880" y="250" text-anchor="middle" fill="#a9b1d6" font-size="14">"users" tab</text>
+              <text x="880" y="270" text-anchor="middle" fill="#a9b1d6" font-size="14">rows of data</text>
               <text x="880" y="300" text-anchor="middle" fill="#9ece6a" font-size="12">your database</text>
             </g>
 
-            <!-- You / developer -->
+            <!-- You -->
             <g>
-              <rect x="1000" y="180" width="160" height="140" rx="12" fill="#1f2335" stroke="#e0af68" stroke-width="2" stroke-dasharray="4 4"/>
-              <text x="1080" y="220" text-anchor="middle" fill="#c0caf5" font-size="18" font-weight="600">You</text>
-              <text x="1080" y="250" text-anchor="middle" fill="#9aa5ce" font-size="13">can view / edit</text>
-              <text x="1080" y="270" text-anchor="middle" fill="#9aa5ce" font-size="13">the sheet directly</text>
+              <rect x="1000" y="180" width="160" height="140" rx="14" fill="#21254a" stroke="#e0af68" stroke-width="2" stroke-dasharray="4 4"/>
+              <text x="1080" y="220" text-anchor="middle" fill="#f0f3ff" font-size="18" font-weight="700">You</text>
+              <text x="1080" y="250" text-anchor="middle" fill="#a9b1d6" font-size="13">view / edit</text>
+              <text x="1080" y="270" text-anchor="middle" fill="#a9b1d6" font-size="13">the sheet directly</text>
               <text x="1080" y="300" text-anchor="middle" fill="#e0af68" font-size="12">debug-friendly!</text>
             </g>
 
-            <!-- Dashed line from Sheet to You -->
             <line x1="980" y1="250" x2="1000" y2="250" stroke="#e0af68" stroke-width="2" stroke-dasharray="4 4"/>
 
-            <!-- Bottom label -->
-            <text x="600" y="450" text-anchor="middle" fill="#9aa5ce" font-size="16">Static frontend  →  Apps Script API  →  Sheet database</text>
+            <text x="600" y="450" text-anchor="middle" fill="#a9b1d6" font-size="16">Static frontend  →  Apps Script API  →  Sheet database</text>
           </svg>
+          <div class="diagram-hint">↕ scroll to zoom · drag to pan · dbl-click to reset</div>
         </div>
       </div>
     </section>
 
     <section class="slide" data-section="Apps Script">
       <div class="slide-inner">
-        <h2>Common gotchas</h2>
-        <ul>
-          <li><strong>CORS</strong>: Apps Script Web Apps return JSON without CORS headers — use simple GET/POST without custom headers and you're fine. Avoid <code>Content-Type: application/json</code> on POST; send as plain text or form data.</li>
-          <li><strong>Redeploy</strong>: after editing code, you must <em>create a new version</em> or <em>manage deployments</em> — old URL keeps running old code otherwise.</li>
-          <li><strong>Permissions</strong>: first run asks you to authorize. That's normal.</li>
-          <li><strong>Quotas</strong>: free tier handles thousands of requests/day — plenty for class projects.</li>
+        <h2><svg class="icon icon-lg" style="color:var(--yellow)"><use href="#i-question"/></svg> Common gotchas</h2>
+        <ul class="checklist">
+          <li><strong>CORS:</strong> avoid <code>Content-Type: application/json</code> on POST — send as plain text or form data instead.</li>
+          <li><strong>Redeploy:</strong> after editing code, create a new version (Manage deployments) — old URL keeps running old code otherwise.</li>
+          <li><strong>Permissions:</strong> first run asks you to authorize. That's normal.</li>
+          <li><strong>Quotas:</strong> free tier handles thousands of requests/day — plenty for class projects.</li>
         </ul>
       </div>
     </section>
@@ -428,23 +560,23 @@ Keep it under 50 lines.</pre>
 
     <section class="slide" data-section="Connect">
       <div class="slide-inner">
-        <h2>Calling the API from your page</h2>
+        <h2><svg class="icon icon-lg" style="color:var(--blue)"><use href="#i-link"/></svg> Calling the API from your page</h2>
         <p class="desc">Browsers have a built-in function called <code>fetch()</code> for talking to APIs.</p>
-        <pre class="code" contenteditable="true">const url = "https://script.google.com/macros/s/AKfycb.../exec";
+        <div class="code"><pre class="code-content" contenteditable="true">const url = "https://script.google.com/macros/s/AKfycb.../exec";
 
 fetch(url)
   .then(res =&gt; res.json())
   .then(data =&gt; {
     console.log(data);
-  });</pre>
+  });</pre></div>
         <p class="note">Open the browser console (F12) to see the result.</p>
       </div>
     </section>
 
     <section class="slide" data-section="Connect">
       <div class="slide-inner">
-        <h2>Sending data (POST)</h2>
-        <pre class="code" contenteditable="true">fetch(url, {
+        <h2><svg class="icon icon-lg" style="color:var(--pink)"><use href="#i-arrow-flow"/></svg> Sending data (POST)</h2>
+        <div class="code"><pre class="code-content" contenteditable="true">fetch(url, {
   method: "POST",
   body: JSON.stringify({
     name: "Aisha",
@@ -452,15 +584,15 @@ fetch(url)
   })
 })
   .then(res =&gt; res.json())
-  .then(data =&gt; console.log("Saved:", data));</pre>
+  .then(data =&gt; console.log("Saved:", data));</pre></div>
         <p class="note">No custom headers = no CORS preflight = no headaches.</p>
       </div>
     </section>
 
     <section class="slide" data-section="Connect">
       <div class="slide-inner">
-        <h2>Putting it together: a tiny form</h2>
-        <pre class="code" contenteditable="true">&lt;form id="f"&gt;
+        <h2><svg class="icon icon-lg" style="color:var(--green)"><use href="#i-layers"/></svg> Putting it together: a tiny form</h2>
+        <div class="code"><pre class="code-content" contenteditable="true">&lt;form id="f"&gt;
   &lt;input name="name" placeholder="Your name"/&gt;
   &lt;input name="email" placeholder="Your email"/&gt;
   &lt;button&gt;Save&lt;/button&gt;
@@ -476,7 +608,7 @@ fetch(url)
     });
     alert("Saved!");
   };
-&lt;/script&gt;</pre>
+&lt;/script&gt;</pre></div>
       </div>
     </section>
 
@@ -484,9 +616,9 @@ fetch(url)
 
     <section class="slide" data-section="GitHub">
       <div class="slide-inner">
-        <h2>What is GitHub?</h2>
+        <h2><svg class="icon icon-lg" style="color:var(--fg)"><use href="#i-github"/></svg> What is GitHub?</h2>
         <p class="desc">GitHub is where you store your code online. Think of it as Google Drive for code — with version history.</p>
-        <ul>
+        <ul class="checklist">
           <li>Free for public projects</li>
           <li>Tracks every change you make</li>
           <li>Required for free hosting (next section)</li>
@@ -496,7 +628,7 @@ fetch(url)
 
     <section class="slide" data-section="GitHub">
       <div class="slide-inner">
-        <h2>Creating your repo</h2>
+        <h2><svg class="icon icon-lg" style="color:var(--purple)"><use href="#i-rocket"/></svg> Creating your repo</h2>
         <ol class="steps">
           <li>Sign in at github.com</li>
           <li>Click <strong>New repository</strong></li>
@@ -512,7 +644,7 @@ fetch(url)
 
     <section class="slide" data-section="Deploy">
       <div class="slide-inner">
-        <h2>Deploy with GitHub Pages</h2>
+        <h2><svg class="icon icon-lg" style="color:var(--purple)"><use href="#i-github"/></svg> Deploy with GitHub Pages</h2>
         <ol class="steps">
           <li>In your repo: <strong>Settings → Pages</strong></li>
           <li>Source: <strong>Deploy from branch</strong></li>
@@ -525,10 +657,10 @@ fetch(url)
 
     <section class="slide" data-section="Deploy">
       <div class="slide-inner">
-        <h2>Or: Cloudflare Pages</h2>
+        <h2><svg class="icon icon-lg" style="color:var(--orange)"><use href="#i-cloud"/></svg> Or: Cloudflare Pages</h2>
         <p class="desc">A nicer experience with a faster network and unlimited bandwidth on the free tier.</p>
         <ol class="steps">
-          <li>Sign in at pages.cloudflare.com</li>
+          <li>Sign in at <code>pages.cloudflare.com</code></li>
           <li>Create project · connect your GitHub repo</li>
           <li>Framework: <strong>None</strong> · Build command: <em>(empty)</em></li>
           <li>Output directory: <strong>/</strong></li>
@@ -538,10 +670,96 @@ fetch(url)
       </div>
     </section>
 
+    <!-- NEW: GitHub Pages vs Cloudflare Pages -->
+    <section class="slide" data-section="Deploy">
+      <div class="slide-inner">
+        <h2><svg class="icon icon-lg" style="color:var(--cyan)"><use href="#i-layers"/></svg> GitHub Pages vs Cloudflare Pages</h2>
+        <p class="desc">Both are free, both serve static sites, both auto-deploy on every push. Here's where they actually differ.</p>
+        <div class="compare-table">
+          <div class="compare-label">Feature</div>
+          <div class="compare-head gh"><svg class="icon" style="width:18px;height:18px"><use href="#i-github"/></svg> GitHub Pages</div>
+          <div class="compare-head cf"><svg class="icon" style="width:18px;height:18px"><use href="#i-cloud"/></svg> Cloudflare Pages</div>
+
+          <div class="compare-label">Owned by</div>
+          <div>Microsoft (GitHub)</div>
+          <div>Cloudflare</div>
+
+          <div class="compare-label">CDN reach</div>
+          <div class="meh">US-centric edge</div>
+          <div class="win">300+ cities · incl. KL/SG</div>
+
+          <div class="compare-label">Speed for SEA users</div>
+          <div class="meh">OK</div>
+          <div class="win">Noticeably faster</div>
+
+          <div class="compare-label">Bandwidth</div>
+          <div class="meh">"Soft" 100 GB / month</div>
+          <div class="win">Unlimited</div>
+
+          <div class="compare-label">Preview deploys for PRs</div>
+          <div class="meh">Manual setup needed</div>
+          <div class="win">Automatic — every branch</div>
+
+          <div class="compare-label">One-click rollback</div>
+          <div class="meh">Manual (git revert)</div>
+          <div class="win">Yes, in dashboard</div>
+
+          <div class="compare-label">Built-in analytics</div>
+          <div class="meh">No</div>
+          <div class="win">Yes, free, privacy-friendly</div>
+
+          <div class="compare-label">DDoS protection</div>
+          <div class="meh">Basic</div>
+          <div class="win">Cloudflare-grade</div>
+
+          <div class="compare-label">URL format</div>
+          <div><code>user.github.io/repo</code></div>
+          <div><code>project.pages.dev</code></div>
+
+          <div class="compare-label">Setup complexity</div>
+          <div class="win">Slightly simpler (one product)</div>
+          <div>Slightly more (separate account)</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NEW: Why we used both -->
+    <section class="slide" data-section="Deploy">
+      <div class="slide-inner">
+        <h2><svg class="icon icon-lg" style="color:var(--yellow)"><use href="#i-sparkle"/></svg> Why we used both today</h2>
+        <p class="desc">For a teaching context this is a great pattern — and the choice for your real projects becomes clearer too.</p>
+        <div class="two-col">
+          <div class="col">
+            <div class="icon-chip chip-purple"><svg class="icon"><use href="#i-github"/></svg></div>
+            <h3 style="color:var(--purple)">GitHub Pages</h3>
+            <p>The obvious one — the site lives where the code lives. Simple, dependable, fine for most things.</p>
+            <p style="color:var(--fg-muted);font-size:0.9rem">Use when: a portfolio, docs, a personal site, anything where ultra-speed isn't the point.</p>
+          </div>
+          <div class="col">
+            <div class="icon-chip chip-orange"><svg class="icon"><use href="#i-cloud"/></svg></div>
+            <h3 style="color:var(--orange)">Cloudflare Pages</h3>
+            <p>Same idea but with a Ferrari engine — faster CDN, better tooling, preview deploys per branch.</p>
+            <p style="color:var(--fg-muted);font-size:0.9rem">Use when: real users, traffic, custom domain, or you want analytics and previews for free.</p>
+          </div>
+        </div>
+        <div class="tldr-card">
+          <strong>TL;DR</strong> — Both work. For ~20 students viewing once you won't notice the difference. For real apps with traffic, Cloudflare wins comfortably. Today you learned both, so you can pick per project.
+        </div>
+      </div>
+    </section>
+
     <section class="slide" data-section="Deploy">
       <div class="slide-inner center">
-        <h2>You shipped a real app.</h2>
+        <div class="hero-emoji">
+          <svg class="icon icon-xl" style="width:80px;height:80px;color:var(--green)"><use href="#i-rocket"/></svg>
+        </div>
+        <h2 style="font-size:3rem;justify-content:center">You shipped a real app.</h2>
         <p class="lede">Public URL · talking to a database · built with AI · zero cost.</p>
+        <div class="tag-row">
+          <span class="pill pill-free">$0 / month</span>
+          <span class="pill pill-fast">Global CDN</span>
+          <span class="pill pill-new">Yours forever</span>
+        </div>
       </div>
     </section>
 
@@ -549,7 +767,7 @@ fetch(url)
 
     <section class="slide" data-section="Wrap-up">
       <div class="slide-inner">
-        <h2>Recap of what we did</h2>
+        <h2><svg class="icon icon-lg" style="color:var(--green)"><use href="#i-check"/></svg> Recap of what we did</h2>
         <ol class="steps">
           <li>Used AI to scaffold a static HTML page</li>
           <li>Designed a Google Sheet as our database</li>
@@ -564,19 +782,22 @@ fetch(url)
 
     <section class="slide" data-section="Wrap-up">
       <div class="slide-inner">
-        <h2>Where to go next</h2>
-        <ul>
-          <li><strong>Add auth</strong>: only logged-in Google users can submit (Apps Script can do this)</li>
-          <li><strong>Pretty up the UI</strong>: ask Gemini to give it Tailwind styles</li>
-          <li><strong>Custom domain</strong>: Cloudflare Pages lets you connect your own</li>
-          <li><strong>More data types</strong>: images via Drive, emails via Gmail, all from Apps Script</li>
-          <li><strong>Graduate</strong>: when Sheets feels too slow, look at Supabase or Firebase (still free tier)</li>
+        <h2><svg class="icon icon-lg" style="color:var(--cyan)"><use href="#i-target"/></svg> Where to go next</h2>
+        <ul class="checklist">
+          <li><strong>Add auth:</strong> only logged-in Google users can submit (Apps Script can do this)</li>
+          <li><strong>Pretty up the UI:</strong> ask Gemini to give it Tailwind styles</li>
+          <li><strong>Custom domain:</strong> Cloudflare Pages lets you connect your own</li>
+          <li><strong>More data types:</strong> images via Drive, emails via Gmail, all from Apps Script</li>
+          <li><strong>Graduate:</strong> when Sheets feels too slow, look at Supabase or Firebase (still free tier)</li>
         </ul>
       </div>
     </section>
 
     <section class="slide" data-section="Wrap-up">
       <div class="slide-inner center">
+        <div class="hero-emoji">
+          <svg class="icon icon-xl" style="width:80px;height:80px;color:var(--purple)"><use href="#i-sparkle"/></svg>
+        </div>
         <h1 class="title-xl">Questions?</h1>
         <p class="lede">Now build something silly and ship it tonight.</p>
       </div>
@@ -584,7 +805,6 @@ fetch(url)
 
   </main>
 
-  <!-- Navigation UI -->
   <nav id="nav">
     <button id="prevBtn" aria-label="Previous slide">←</button>
     <span id="counter">1 / 1</span>

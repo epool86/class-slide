@@ -4,6 +4,7 @@ const prevBtn = document.getElementById('prevBtn');
 const nextBtn = document.getElementById('nextBtn');
 const counter = document.getElementById('counter');
 const sectionLabel = document.getElementById('sectionLabel');
+const progress = document.getElementById('progress');
 
 let current = 0;
 
@@ -14,6 +15,11 @@ function show(i) {
   sectionLabel.textContent = slides[current].dataset.section || '';
   prevBtn.disabled = current === 0;
   nextBtn.disabled = current === slides.length - 1;
+
+  if (progress) {
+    const pct = ((current + 1) / slides.length) * 100;
+    progress.style.width = pct + '%';
+  }
 
   // Persist position
   try { localStorage.setItem('deck-pos', String(current)); } catch {}
