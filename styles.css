@@ -246,6 +246,104 @@ li { margin-bottom: 6px; }
   font-size: 0.8rem;
 }
 
+.blocklist {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+.blocklist li {
+  padding: 14px 18px 14px 50px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  position: relative;
+  transition: all 0.2s;
+}
+.blocklist li:hover {
+  border-color: var(--orange);
+  transform: translateX(4px);
+}
+.blocklist li::before {
+  content: "✕";
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
+  background: var(--orange);
+  color: var(--bg);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 0.8rem;
+}
+
+.split-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 18px;
+}
+.split-cols .col-pro, .split-cols .col-con {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 22px;
+}
+.split-cols .col-pro { border-top: 4px solid var(--green); }
+.split-cols .col-con { border-top: 4px solid var(--orange); }
+.split-cols h3 {
+  font-size: 1.15rem;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.grad-to {
+  margin-top: 22px;
+  padding: 20px 24px;
+  background: linear-gradient(135deg, rgba(207,166,255,0.15), rgba(126,236,255,0.10));
+  border: 1px solid var(--purple);
+  border-radius: 14px;
+}
+.grad-to-label {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--purple);
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+.grad-to-pills {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.grad-pill {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--fg);
+  padding: 8px 14px;
+  border-radius: 100px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+.grad-pill:hover {
+  border-color: var(--purple);
+  transform: translateY(-2px);
+}
+.grad-pill .free {
+  color: var(--green);
+  font-size: 0.75rem;
+  margin-left: 4px;
+}
+
 .steps {
   counter-reset: step;
   list-style: none;

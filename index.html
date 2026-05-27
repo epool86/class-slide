@@ -370,29 +370,87 @@ Keep it under 50 lines.</pre></div>
 
     <section class="slide" data-section="Database">
       <div class="slide-inner">
-        <h2><svg class="icon icon-lg" style="color:var(--red)"><use href="#i-x"/></svg> When Sheets is NOT enough</h2>
-        <p class="desc">It's a great start, but know the limits.</p>
-        <div class="two-col">
-          <div class="col">
-            <h3 style="color:var(--red)">Not great when…</h3>
-            <ul>
-              <li>Hundreds of writes per second</li>
-              <li>Millions of rows</li>
-              <li>Sensitive personal data</li>
-              <li>Complex relations across tables</li>
+        <h2><svg class="icon icon-lg" style="color:var(--yellow)"><use href="#i-layers"/></svg> Sheets as backend: the trade-offs</h2>
+        <p class="desc">Sheets is brilliant for some things and bad at others. Knowing both sides means you'll pick it for the right projects — and avoid pain when it's the wrong tool.</p>
+        <div class="split-cols">
+          <div class="col-pro">
+            <h3 style="color:var(--green)">
+              <svg class="icon" style="color:var(--green)"><use href="#i-check"/></svg>
+              Where it shines
+            </h3>
+            <ul class="checklist">
+              <li><strong>Free forever</strong> — no card, no expiring trial, no surprise bills</li>
+              <li><strong>Zero setup</strong> — you're writing data in 30 seconds, not 30 minutes</li>
+              <li><strong>Visible data</strong> — open the sheet to inspect, debug, or fix anytime</li>
+              <li><strong>Share like a doc</strong> — collaborators don't need an admin panel</li>
+              <li><strong>Built-in history</strong> — every change tracked, full revert support</li>
+              <li><strong>Already familiar</strong> — you know spreadsheets, your team does too</li>
             </ul>
           </div>
-          <div class="col">
-            <h3 style="color:var(--green)">Perfect when…</h3>
-            <ul>
-              <li>Side projects & MVPs</li>
-              <li>Class projects</li>
-              <li>Small business forms</li>
-              <li>Internal tools (&lt;100 users)</li>
+          <div class="col-con">
+            <h3 style="color:var(--orange)">
+              <svg class="icon" style="color:var(--orange)"><use href="#i-x"/></svg>
+              Where it struggles
+            </h3>
+            <ul class="blocklist">
+              <li><strong>Slow API</strong> — Apps Script adds ~1–3s latency per call</li>
+              <li><strong>Rate limits</strong> — ~60 reads/min, daily quotas, throttling kicks in fast</li>
+              <li><strong>Doesn't scale</strong> — performance degrades past ~10k–50k rows</li>
+              <li><strong>No real relations</strong> — JOINs are clunky, no foreign keys</li>
+              <li><strong>No real-time</strong> — can't push live updates to clients (no websockets)</li>
+              <li><strong>Not for sensitive data</strong> — PII, payments, health data need proper security</li>
             </ul>
           </div>
         </div>
-        <p class="note">For 99% of side projects and class projects, Sheets is perfect.</p>
+        <p class="note">Rule of thumb: if it would fit comfortably in one spreadsheet you'd open in Sheets, it'll work as your backend too.</p>
+      </div>
+    </section>
+
+    <section class="slide" data-section="Database">
+      <div class="slide-inner">
+        <h2><svg class="icon icon-lg" style="color:var(--purple)"><use href="#i-target"/></svg> Use it · or graduate to something else</h2>
+        <p class="desc">A clear way to decide: start with Sheets, then know exactly when it's time to switch.</p>
+        <div class="split-cols">
+          <div class="col-pro">
+            <h3 style="color:var(--green)">
+              <svg class="icon" style="color:var(--green)"><use href="#i-check"/></svg>
+              Perfect for
+            </h3>
+            <ul class="checklist">
+              <li>Side projects, MVPs, prototypes</li>
+              <li>Class projects (today's example!)</li>
+              <li>Small business forms & internal tools</li>
+              <li>Apps with under ~100 active users</li>
+              <li>Anything where the data fits in one spreadsheet</li>
+              <li>"Ship fast, validate the idea first" mode</li>
+            </ul>
+          </div>
+          <div class="col-con">
+            <h3 style="color:var(--orange)">
+              <svg class="icon" style="color:var(--orange)"><use href="#i-x"/></svg>
+              Graduate when…
+            </h3>
+            <ul class="blocklist">
+              <li>You have more than ~10,000 rows</li>
+              <li>Many users writing at the same time (race conditions)</li>
+              <li>You need responses under 500ms</li>
+              <li>You handle sensitive data or have compliance needs</li>
+              <li>You need complex queries / reporting / aggregations</li>
+              <li>You're hitting Apps Script quotas repeatedly</li>
+            </ul>
+          </div>
+        </div>
+        <div class="grad-to">
+          <div class="grad-to-label">Graduate to — still free tier</div>
+          <div class="grad-to-pills">
+            <span class="grad-pill">Supabase<span class="free">free</span></span>
+            <span class="grad-pill">Firebase<span class="free">free</span></span>
+            <span class="grad-pill">PlanetScale<span class="free">free</span></span>
+            <span class="grad-pill">Turso<span class="free">free</span></span>
+            <span class="grad-pill">Neon<span class="free">free</span></span>
+            <span class="grad-pill">Xano<span class="free">free</span></span>
+          </div>
+        </div>
       </div>
     </section>
 
