@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Build Your First App with AI — Vibe Coders Class</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main id="deck">
+
+    <!-- ============ SECTION 1: INTRO ============ -->
+
+    <section class="slide" data-section="Intro">
+      <div class="slide-inner center">
+        <h1 class="title-xl">Build Your First App<br/><span class="accent">with AI</span></h1>
+        <p class="lede">No coding background needed. Free tools only.</p>
+        <p class="meta">A 3-hour hands-on session for vibe coders</p>
+      </div>
+    </section>
+
+    <section class="slide" data-section="Intro">
+      <div class="slide-inner">
+        <h2>What you'll walk away with today</h2>
+        <p class="desc">By the end of this session, you'll have a working web app — built, connected to a database, and live on the internet.</p>
+        <ul class="checklist">
+          <li>A real static web app (HTML page)</li>
+          <li>A Google Sheet acting as your database</li>
+          <li>An API connecting the two (via Apps Script)</li>
+          <li>Your code on GitHub</li>
+          <li>Your app live on a public URL — for free</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="slide" data-section="Intro">
+      <div class="slide-inner">
+        <h2>The stack we'll use today</h2>
+        <p class="desc">Everything here is free. No credit card, no subscription.</p>
+        <div class="stack-grid">
+          <div class="stack-card">
+            <div class="stack-label">AI helpers</div>
+            <div class="stack-tool">Gemini · AI Studio · Antigravity</div>
+          </div>
+          <div class="stack-card">
+            <div class="stack-label">Frontend</div>
+            <div class="stack-tool">Plain HTML / CSS / JS</div>
+          </div>
+          <div class="stack-card">
+            <div class="stack-label">Database</div>
+            <div class="stack-tool">Google Sheets</div>
+          </div>
+          <div class="stack-card">
+            <div class="stack-label">API / Backend</div>
+            <div class="stack-tool">Google Apps Script</div>
+          </div>
+          <div class="stack-card">
+            <div class="stack-label">Code hosting</div>
+            <div class="stack-tool">GitHub</div>
+          </div>
+          <div class="stack-card">
+            <div class="stack-label">Web hosting</div>
+            <div class="stack-tool">Cloudflare Pages / GitHub Pages</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SECTION 2: FOUNDATIONS ============ -->
+
+    <section class="slide" data-section="Foundations">
+      <div class="slide-inner">
+        <h2>What is a "static" web app?</h2>
+        <p class="desc">A static app is just files (HTML, CSS, JS) served to the browser. No server running your code. The browser does all the work.</p>
+        <div class="two-col">
+          <div class="col">
+            <h3>Static</h3>
+            <ul>
+              <li>Just files</li>
+              <li>Free to host</li>
+              <li>Fast</li>
+              <li>Talks to external APIs for data</li>
+            </ul>
+          </div>
+          <div class="col">
+            <h3>Dynamic</h3>
+            <ul>
+              <li>Needs a server running 24/7</li>
+              <li>Usually costs money</li>
+              <li>More moving parts</li>
+              <li>More power, more complexity</li>
+            </ul>
+          </div>
+        </div>
+        <p class="note">Today: static frontend + Google Apps Script as our "backend in the cloud."</p>
+      </div>
+    </section>
+
+    <section class="slide" data-section="Foundations">
+      <div class="slide-inner">
+        <h2>HTML, CSS, JS in 60 seconds</h2>
+        <div class="three-col">
+          <div class="col">
+            <h3>HTML</h3>
+            <p>The structure. Boxes and text.</p>
+            <pre class="code" contenteditable="true">&lt;h1&gt;Hello&lt;/h1&gt;
+&lt;p&gt;World&lt;/p&gt;</pre>
+          </div>
+          <div class="col">
+            <h3>CSS</h3>
+            <p>The look. Colors, spacing.</p>
+            <pre class="code" contenteditable="true">h1 {
+  color: orange;
+}</pre>
+          </div>
+          <div class="col">
+            <h3>JS</h3>
+            <p>The behavior. Clicks, data.</p>
+            <pre class="code" contenteditable="true">alert("Hi!");</pre>
+          </div>
+        </div>
+        <p class="note">You don't need to memorize these — the AI writes them for you.</p>
+      </div>
+    </section>
+
+    <!-- ============ SECTION 3: AI AS CODING PARTNER ============ -->
+
+    <section class="slide" data-section="AI Tools">
+      <div class="slide-inner">
+        <h2>Your coding partner: AI</h2>
+        <p class="desc">You describe what you want. The AI writes the code. You read, run, and refine.</p>
+        <div class="flow-row">
+          <div class="flow-step">You describe</div>
+          <div class="arrow">→</div>
+          <div class="flow-step">AI writes code</div>
+          <div class="arrow">→</div>
+          <div class="flow-step">You run it</div>
+          <div class="arrow">→</div>
+          <div class="flow-step">You refine</div>
+        </div>
+        <p class="note">The skill you're learning today is <em>describing clearly</em>, not memorizing syntax.</p>
+      </div>
+    </section>
+
+    <section class="slide" data-section="AI Tools">
+      <div class="slide-inner">
+        <h2>Google AI Studio</h2>
+        <p class="desc">A free playground for Gemini. Great for trying ideas, generating code snippets, and chatting through a problem.</p>
+        <ul>
+          <li>aistudio.google.com</li>
+          <li>Sign in with Google — done</li>
+          <li>Pick a model (e.g. Gemini 2.5 Pro)</li>
+          <li>Start prompting</li>
+        </ul>
+        <p class="note">Best for: quick code generation, debugging, idea exploration.</p>
+      </div>
+    </section>
+
+    <section class="slide" data-section="AI Tools">
+      <div class="slide-inner">
+        <h2>Gemini (the chat app)</h2>
+        <p class="desc">The consumer-facing chat. Same family of models. Useful when you want a clean conversation about your project.</p>
+        <ul>
+          <li>gemini.google.com</li>
+          <li>Free tier is enough for class today</li>
+          <li>Can read images — paste screenshots of errors</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="slide" data-section="AI Tools">
+      <div class="slide-inner">
+        <h2>Antigravity (CLI / IDE / Agent)</h2>
+        <p class="desc">An AI coding agent that lives in your editor or terminal. It can read your files, edit them, run commands — like a junior developer pair-programming with you.</p>
+        <ul>
+          <li>Great for multi-file projects</li>
+          <li>Can run your code and fix errors itself</li>
+          <li>You stay in control — review every change</li>
+        </ul>
+        <p class="note">Use AI Studio / Gemini for ideas; Antigravity for actually building.</p>
+      </div>
+    </section>
+
+    <section class="slide" data-section="AI Tools">
+      <div class="slide-inner">
+        <h2>How to prompt for code</h2>
+        <p class="desc">A good prompt has three parts: <strong>what</strong> you want, <strong>context</strong>, and <strong>constraints</strong>.</p>
+        <pre class="code" contenteditable="true">Build me a simple HTML page with a form
+that has a name field and a submit button.
+
+When submitted, show the name in a greeting
+below the form.
+
+Use plain JavaScript, no frameworks.
+Keep it under 50 lines.</pre>
+        <p class="note">Bad: "make a website". Good: specific, contextual, constrained.</p>
+      </div>
+    </section>
+
+    <!-- ============ SECTION 4: GOOGLE SHEETS AS DB ============ -->
+
+    <section class="slide" data-section="Database">
+      <div class="slide-inner">
+        <h2>Google Sheets as your database</h2>
+        <p class="desc">For most small apps, a spreadsheet is more than enough. You already know how to use it. It's free. It's shareable.</p>
+        <ul>
+          <li>Rows = records</li>
+          <li>Columns = fields</li>
+          <li>First row = column names</li>
+          <li>Visible — you can edit/inspect data anytime</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="slide" data-section="Database">
+      <div class="slide-inner">
+        <h2>Designing your sheet</h2>
+        <p class="desc">Example: a "users" sheet for a sign-up form.</p>
+        <table class="data-table">
+          <thead>
+            <tr><th>id</th><th>name</th><th>email</th><th>created_at</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td>Aisha</td><td>aisha@example.com</td><td>2026-05-27</td></tr>
+            <tr><td>2</td><td>Ben</td><td>ben@example.com</td><td>2026-05-27</td></tr>
+          </tbody>
+        </table>
+        <p class="note">Tip: name your sheet tab clearly (e.g. "users"). We'll reference that name in code.</p>
+      </div>
+    </section>
+
+    <section class="slide" data-section="Database">
+      <div class="slide-inner">
+        <h2>When Sheets is NOT enough</h2>
+        <p class="desc">It's a great start, but know the limits.</p>
+        <ul>
+          <li>Hundreds of writes per second? No.</li>
+          <li>Millions of rows? No.</li>
+          <li>Sensitive personal data? Be careful.</li>
+          <li>Complex relations? Possible but messy.</li>
+        </ul>
+        <p class="note">For 99% of side projects and class projects, Sheets is perfect.</p>
+      </div>
+    </section>
+
+    <!-- ============ SECTION 5: APPS SCRIPT API ============ -->
+
+    <section class="slide" data-section="Apps Script">
+      <div class="slide-inner">
+        <h2>Google Apps Script as your API</h2>
+        <p class="desc">Apps Script is free JavaScript that runs on Google's servers, with built-in access to your Sheets, Docs, Gmail, and more.</p>
+        <p>It's the bridge between your static app (in the browser) and your data (in the Sheet).</p>
+        <div class="flow-row">
+          <div class="flow-step">Your app</div>
+          <div class="arrow">→</div>
+          <div class="flow-step">Apps Script (API)</div>
+          <div class="arrow">→</div>
+          <div class="flow-step">Google Sheet</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-section="Apps Script">
+      <div class="slide-inner">
+        <h2>The two functions you need</h2>
+        <p class="desc">Apps Script Web Apps run two special functions when a URL is called:</p>
+        <ul>
+          <li><code>doGet(e)</code> — runs when someone <em>reads</em> data (GET request)</li>
+          <li><code>doPost(e)</code> — runs when someone <em>writes</em> data (POST request)</li>
+        </ul>
+        <p>Each receives an <code>e</code> (event) object with parameters and body.</p>
+      </div>
+    </section>
+
+    <section class="slide" data-section="Apps Script">
+      <div class="slide-inner">
+        <h2>Reading from the sheet</h2>
+        <p class="desc">A minimal <code>doGet</code> that returns all rows as JSON.</p>
+        <pre class="code" contenteditable="true">function doGet(e) {
+  const sheet = SpreadsheetApp
+    .getActiveSpreadsheet()
+    .getSheetByName("users");
+
+  const data = sheet.getDataRange().getValues();
+  const headers = data.shift();
+
+  const rows = data.map(row =&gt; {
+    const obj = {};
+    headers.forEach((h, i) =&gt; obj[h] = row[i]);
+    return obj;
+  });
+
+  return ContentService
+    .createTextOutput(JSON.stringify(rows))
+    .setMimeType(ContentService.MimeType.JSON);
+}</pre>
+      </div>
+    </section>
+
+    <section class="slide" data-section="Apps Script">
+      <div class="slide-inner">
+        <h2>Writing to the sheet</h2>
+        <p class="desc">A minimal <code>doPost</code> that appends a new row.</p>
+        <pre class="code" contenteditable="true">function doPost(e) {
+  const body = JSON.parse(e.postData.contents);
+
+  const sheet = SpreadsheetApp
+    .getActiveSpreadsheet()
+    .getSheetByName("users");
+
+  sheet.appendRow([
+    Date.now(),
+    body.name,
+    body.email,
+    new Date()
+  ]);
+
+  return ContentService
+    .createTextOutput(JSON.stringify({ ok: true }))
+    .setMimeType(ContentService.MimeType.JSON);
+}</pre>
+      </div>
+    </section>
+
+    <section class="slide" data-section="Apps Script">
+      <div class="slide-inner">
+        <h2>Deploy as a Web App</h2>
+        <p class="desc">In Apps Script editor:</p>
+        <ol class="steps">
+          <li>Click <strong>Deploy → New deployment</strong></li>
+          <li>Type: <strong>Web app</strong></li>
+          <li>Execute as: <strong>Me</strong></li>
+          <li>Who has access: <strong>Anyone</strong></li>
+          <li>Click <strong>Deploy</strong> — copy the URL</li>
+        </ol>
+        <p class="note">That URL is your API endpoint. Treat it as semi-public.</p>
+      </div>
+    </section>
+
+    <section class="slide diagram-slide" data-section="Apps Script">
+      <div class="slide-inner">
+        <h2>The full data flow</h2>
+        <p class="desc">Drag to pan · scroll to zoom · double-click to reset</p>
+        <div class="diagram-wrap" id="diagramWrap">
+          <svg id="flowDiagram" viewBox="0 0 1200 500" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                <polygon points="0 0, 10 3.5, 0 7" fill="#7aa2f7" />
+              </marker>
+            </defs>
+
+            <!-- Browser / User -->
+            <g>
+              <rect x="40" y="180" width="200" height="140" rx="12" fill="#1f2335" stroke="#7aa2f7" stroke-width="2"/>
+              <text x="140" y="220" text-anchor="middle" fill="#c0caf5" font-size="20" font-weight="600">Browser</text>
+              <text x="140" y="250" text-anchor="middle" fill="#9aa5ce" font-size="14">Your static</text>
+              <text x="140" y="270" text-anchor="middle" fill="#9aa5ce" font-size="14">HTML page</text>
+              <text x="140" y="300" text-anchor="middle" fill="#7aa2f7" font-size="12">fetch(url)</text>
+            </g>
+
+            <!-- Arrow 1 -->
+            <line x1="245" y1="230" x2="395" y2="230" stroke="#7aa2f7" stroke-width="2" marker-end="url(#arrowhead)"/>
+            <text x="320" y="220" text-anchor="middle" fill="#c0caf5" font-size="13">HTTPS request</text>
+            <text x="320" y="248" text-anchor="middle" fill="#9aa5ce" font-size="11">GET or POST</text>
+
+            <!-- Arrow back -->
+            <line x1="395" y1="270" x2="245" y2="270" stroke="#9ece6a" stroke-width="2" marker-end="url(#arrowhead)"/>
+            <text x="320" y="290" text-anchor="middle" fill="#9ece6a" font-size="13">JSON response</text>
+
+            <!-- Apps Script -->
+            <g>
+              <rect x="400" y="180" width="220" height="140" rx="12" fill="#1f2335" stroke="#bb9af7" stroke-width="2"/>
+              <text x="510" y="215" text-anchor="middle" fill="#c0caf5" font-size="20" font-weight="600">Apps Script</text>
+              <text x="510" y="245" text-anchor="middle" fill="#9aa5ce" font-size="14">doGet(e)</text>
+              <text x="510" y="265" text-anchor="middle" fill="#9aa5ce" font-size="14">doPost(e)</text>
+              <text x="510" y="295" text-anchor="middle" fill="#bb9af7" font-size="12">runs on Google servers</text>
+            </g>
+
+            <!-- Arrow 2 -->
+            <line x1="625" y1="230" x2="775" y2="230" stroke="#bb9af7" stroke-width="2" marker-end="url(#arrowhead)"/>
+            <text x="700" y="220" text-anchor="middle" fill="#c0caf5" font-size="13">read / write</text>
+            <text x="700" y="248" text-anchor="middle" fill="#9aa5ce" font-size="11">SpreadsheetApp</text>
+
+            <line x1="775" y1="270" x2="625" y2="270" stroke="#9ece6a" stroke-width="2" marker-end="url(#arrowhead)"/>
+            <text x="700" y="290" text-anchor="middle" fill="#9ece6a" font-size="13">row data</text>
+
+            <!-- Google Sheet -->
+            <g>
+              <rect x="780" y="180" width="200" height="140" rx="12" fill="#1f2335" stroke="#9ece6a" stroke-width="2"/>
+              <text x="880" y="220" text-anchor="middle" fill="#c0caf5" font-size="20" font-weight="600">Google Sheet</text>
+              <text x="880" y="250" text-anchor="middle" fill="#9aa5ce" font-size="14">"users" tab</text>
+              <text x="880" y="270" text-anchor="middle" fill="#9aa5ce" font-size="14">rows of data</text>
+              <text x="880" y="300" text-anchor="middle" fill="#9ece6a" font-size="12">your database</text>
+            </g>
+
+            <!-- You / developer -->
+            <g>
+              <rect x="1000" y="180" width="160" height="140" rx="12" fill="#1f2335" stroke="#e0af68" stroke-width="2" stroke-dasharray="4 4"/>
+              <text x="1080" y="220" text-anchor="middle" fill="#c0caf5" font-size="18" font-weight="600">You</text>
+              <text x="1080" y="250" text-anchor="middle" fill="#9aa5ce" font-size="13">can view / edit</text>
+              <text x="1080" y="270" text-anchor="middle" fill="#9aa5ce" font-size="13">the sheet directly</text>
+              <text x="1080" y="300" text-anchor="middle" fill="#e0af68" font-size="12">debug-friendly!</text>
+            </g>
+
+            <!-- Dashed line from Sheet to You -->
+            <line x1="980" y1="250" x2="1000" y2="250" stroke="#e0af68" stroke-width="2" stroke-dasharray="4 4"/>
+
+            <!-- Bottom label -->
+            <text x="600" y="450" text-anchor="middle" fill="#9aa5ce" font-size="16">Static frontend  →  Apps Script API  →  Sheet database</text>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-section="Apps Script">
+      <div class="slide-inner">
+        <h2>Common gotchas</h2>
+        <ul>
+          <li><strong>CORS</strong>: Apps Script Web Apps return JSON without CORS headers — use simple GET/POST without custom headers and you're fine. Avoid <code>Content-Type: application/json</code> on POST; send as plain text or form data.</li>
+          <li><strong>Redeploy</strong>: after editing code, you must <em>create a new version</em> or <em>manage deployments</em> — old URL keeps running old code otherwise.</li>
+          <li><strong>Permissions</strong>: first run asks you to authorize. That's normal.</li>
+          <li><strong>Quotas</strong>: free tier handles thousands of requests/day — plenty for class projects.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ SECTION 6: FRONTEND CONNECTS TO API ============ -->
+
+    <section class="slide" data-section="Connect">
+      <div class="slide-inner">
+        <h2>Calling the API from your page</h2>
+        <p class="desc">Browsers have a built-in function called <code>fetch()</code> for talking to APIs.</p>
+        <pre class="code" contenteditable="true">const url = "https://script.google.com/macros/s/AKfycb.../exec";
+
+fetch(url)
+  .then(res =&gt; res.json())
+  .then(data =&gt; {
+    console.log(data);
+  });</pre>
+        <p class="note">Open the browser console (F12) to see the result.</p>
+      </div>
+    </section>
+
+    <section class="slide" data-section="Connect">
+      <div class="slide-inner">
+        <h2>Sending data (POST)</h2>
+        <pre class="code" contenteditable="true">fetch(url, {
+  method: "POST",
+  body: JSON.stringify({
+    name: "Aisha",
+    email: "aisha@example.com"
+  })
+})
+  .then(res =&gt; res.json())
+  .then(data =&gt; console.log("Saved:", data));</pre>
+        <p class="note">No custom headers = no CORS preflight = no headaches.</p>
+      </div>
+    </section>
+
+    <section class="slide" data-section="Connect">
+      <div class="slide-inner">
+        <h2>Putting it together: a tiny form</h2>
+        <pre class="code" contenteditable="true">&lt;form id="f"&gt;
+  &lt;input name="name" placeholder="Your name"/&gt;
+  &lt;input name="email" placeholder="Your email"/&gt;
+  &lt;button&gt;Save&lt;/button&gt;
+&lt;/form&gt;
+
+&lt;script&gt;
+  f.onsubmit = async (e) =&gt; {
+    e.preventDefault();
+    const data = Object.fromEntries(new FormData(f));
+    const res = await fetch(URL, {
+      method: "POST",
+      body: JSON.stringify(data)
+    });
+    alert("Saved!");
+  };
+&lt;/script&gt;</pre>
+      </div>
+    </section>
+
+    <!-- ============ SECTION 7: GIT & GITHUB ============ -->
+
+    <section class="slide" data-section="GitHub">
+      <div class="slide-inner">
+        <h2>What is GitHub?</h2>
+        <p class="desc">GitHub is where you store your code online. Think of it as Google Drive for code — with version history.</p>
+        <ul>
+          <li>Free for public projects</li>
+          <li>Tracks every change you make</li>
+          <li>Required for free hosting (next section)</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="slide" data-section="GitHub">
+      <div class="slide-inner">
+        <h2>Creating your repo</h2>
+        <ol class="steps">
+          <li>Sign in at github.com</li>
+          <li>Click <strong>New repository</strong></li>
+          <li>Give it a name (e.g. <code>my-first-app</code>)</li>
+          <li>Public · Add README · Create</li>
+          <li>Upload your <code>index.html</code> (drag &amp; drop works!)</li>
+        </ol>
+        <p class="note">You don't need to learn Git commands today — the web UI is enough.</p>
+      </div>
+    </section>
+
+    <!-- ============ SECTION 8: DEPLOY ============ -->
+
+    <section class="slide" data-section="Deploy">
+      <div class="slide-inner">
+        <h2>Deploy with GitHub Pages</h2>
+        <ol class="steps">
+          <li>In your repo: <strong>Settings → Pages</strong></li>
+          <li>Source: <strong>Deploy from branch</strong></li>
+          <li>Branch: <strong>main / root</strong></li>
+          <li>Save · wait ~1 minute</li>
+          <li>Your site is at <code>username.github.io/repo-name</code></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="slide" data-section="Deploy">
+      <div class="slide-inner">
+        <h2>Or: Cloudflare Pages</h2>
+        <p class="desc">A nicer experience with a faster network and unlimited bandwidth on the free tier.</p>
+        <ol class="steps">
+          <li>Sign in at pages.cloudflare.com</li>
+          <li>Create project · connect your GitHub repo</li>
+          <li>Framework: <strong>None</strong> · Build command: <em>(empty)</em></li>
+          <li>Output directory: <strong>/</strong></li>
+          <li>Deploy · you get a <code>.pages.dev</code> URL</li>
+        </ol>
+        <p class="note">Every push to GitHub auto-deploys. Magic.</p>
+      </div>
+    </section>
+
+    <section class="slide" data-section="Deploy">
+      <div class="slide-inner center">
+        <h2>You shipped a real app.</h2>
+        <p class="lede">Public URL · talking to a database · built with AI · zero cost.</p>
+      </div>
+    </section>
+
+    <!-- ============ SECTION 9: WRAP-UP ============ -->
+
+    <section class="slide" data-section="Wrap-up">
+      <div class="slide-inner">
+        <h2>Recap of what we did</h2>
+        <ol class="steps">
+          <li>Used AI to scaffold a static HTML page</li>
+          <li>Designed a Google Sheet as our database</li>
+          <li>Wrote Apps Script for <code>doGet</code> + <code>doPost</code></li>
+          <li>Deployed the script as a Web App → got an API URL</li>
+          <li>Connected the page to the API with <code>fetch()</code></li>
+          <li>Pushed code to GitHub</li>
+          <li>Deployed via Cloudflare / GitHub Pages</li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="slide" data-section="Wrap-up">
+      <div class="slide-inner">
+        <h2>Where to go next</h2>
+        <ul>
+          <li><strong>Add auth</strong>: only logged-in Google users can submit (Apps Script can do this)</li>
+          <li><strong>Pretty up the UI</strong>: ask Gemini to give it Tailwind styles</li>
+          <li><strong>Custom domain</strong>: Cloudflare Pages lets you connect your own</li>
+          <li><strong>More data types</strong>: images via Drive, emails via Gmail, all from Apps Script</li>
+          <li><strong>Graduate</strong>: when Sheets feels too slow, look at Supabase or Firebase (still free tier)</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="slide" data-section="Wrap-up">
+      <div class="slide-inner center">
+        <h1 class="title-xl">Questions?</h1>
+        <p class="lede">Now build something silly and ship it tonight.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Navigation UI -->
+  <nav id="nav">
+    <button id="prevBtn" aria-label="Previous slide">←</button>
+    <span id="counter">1 / 1</span>
+    <button id="nextBtn" aria-label="Next slide">→</button>
+  </nav>
+
+  <div id="sectionLabel"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
